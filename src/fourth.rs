@@ -121,10 +121,6 @@ impl<T> List<T> {
     pub fn into_iter(self) -> IntoIter<T> {
         IntoIter(self)
     }
-
-    pub fn iter(&self) -> Iter<T> {
-        Iter(self.head.as_ref().map(|head| head.borrow()))
-    }
 }
 
 impl<T> Iterator for IntoIter<T> {
